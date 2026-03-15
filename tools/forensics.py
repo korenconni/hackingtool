@@ -73,8 +73,6 @@ class Guymager(HackingTool):
     RUN_COMMANDS = ["sudo guymager"]
     PROJECT_URL = "https://guymager.sourceforge.io/"
 
-    def __init__(self):
-        super().__init__(installable=False)
 
 
 class Toolsley(HackingTool):

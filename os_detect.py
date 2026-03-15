@@ -80,6 +80,7 @@ PACKAGE_INSTALL_CMDS: dict[str, str] = {
     "zypper":  "zypper install -y {packages}",
     "apk":     "apk add {packages}",
     "brew":    "brew install {packages}",
+    "pkg":     "pkg install -y {packages}",
 }
 
 PACKAGE_UPDATE_CMDS: dict[str, str] = {
@@ -89,6 +90,7 @@ PACKAGE_UPDATE_CMDS: dict[str, str] = {
     "zypper":  "zypper update -y",
     "apk":     "apk update && apk upgrade",
     "brew":    "brew update && brew upgrade",
+    "pkg":     "pkg update && pkg upgrade -y",
 }
 
 # Core system packages needed per package manager
@@ -101,6 +103,7 @@ REQUIRED_PACKAGES: dict[str, list[str]] = {
                 "ruby", "golang", "php", "java-17-openjdk-headless"],
     "zypper":  ["git", "python3-pip", "curl", "wget", "ruby", "go", "php"],
     "brew":    ["git", "python3", "curl", "wget", "ruby", "go", "php"],
+    "pkg":     ["git", "python3", "py39-pip", "curl", "wget", "ruby", "go", "php83"],
 }
 
 

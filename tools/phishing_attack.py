@@ -83,7 +83,7 @@ class HiddenEye(HackingTool):
     PROJECT_URL = "https://github.com/Morsmalleo/HiddenEye"
 
 
-class Evilginx2(HackingTool):
+class Evilginx3(HackingTool):
     TITLE = "Evilginx3"
     SUPPORTED_OS = ["linux"]
     DESCRIPTION = (
@@ -136,7 +136,7 @@ class QRJacking(HackingTool):
     PROJECT_URL = "https://github.com/cryptedwolf/ohmyqr"
 
 
-# Bug 10 fix: WifiPhisher removed from phishing tools — it belongs in wireless_attack_tools.py
+# Bug 10 fix: WifiPhisher removed from phishing tools — it belongs in wireless_attack.py
 
 
 class BlackEye(HackingTool):
@@ -237,7 +237,7 @@ class PhishingAttackTools(HackingToolsCollection):
         Setoolkit(),
         SocialFish(),
         HiddenEye(),
-        Evilginx2(),
+        Evilginx3(),
         ISeeYou(),
         SayCheese(),
         QRJacking(),

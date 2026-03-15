@@ -158,6 +158,8 @@ def install_source() -> bool:
         if APP_INSTALL_DIR.exists():
             subprocess.run(["rm", "-rf", str(APP_INSTALL_DIR)], check=True)
         subprocess.run(["cp", "-a", str(source_dir), str(APP_INSTALL_DIR)], check=True)
+        # Fix ownership so git doesn't complain about "dubious ownership"
+        subprocess.run(["chown", "-R", "root:root", str(APP_INSTALL_DIR)], check=False)
         console.print("[success]✔ Source copied (no re-clone needed)[/success]")
         return True
 

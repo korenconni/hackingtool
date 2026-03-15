@@ -21,11 +21,12 @@ fi
 echo "[✔] Internet OK"
 
 echo "[*] Pulling latest changes..."
+git -C "$INSTALL_DIR" config --local safe.directory "$INSTALL_DIR"
 git -C "$INSTALL_DIR" pull --rebase
 
 echo "[*] Updating Python dependencies..."
 if [[ -f "$INSTALL_DIR/venv/bin/pip" ]]; then
-    "$INSTALL_DIR/venv/bin/pip" install -q -r "$INSTALL_DIR/requirements.txt"
+    "$INSTALL_DIR/venv/bin/pip" install -q --upgrade -r "$INSTALL_DIR/requirements.txt"
 else
     echo "[WARN] venv not found — skipping pip update. Run install.py to create it."
 fi

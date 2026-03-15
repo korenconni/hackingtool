@@ -24,7 +24,7 @@ class UpdateTool(HackingTool):
         mgr = CURRENT_OS.pkg_manager
         cmd = PACKAGE_UPDATE_CMDS.get(mgr)
         if cmd:
-            priv = "" if CURRENT_OS.system == "macos" else "sudo "
+            priv = "" if (CURRENT_OS.system == "macos" or os.geteuid() == 0) else "sudo "
             # shell=True needed — cmd contains && chains; strings are hardcoded, not user input
             subprocess.run(f"{priv}{cmd}", shell=True, check=False)
         else:
