@@ -80,6 +80,8 @@ python3 hackingtool.py
 
 Navigate through the menu using the numbered options displayed on screen.
 
+> **Personal note:** I primarily use this for the Information Gathering and Subdomain Scanner sections while practicing on HackTheBox/TryHackMe labs.
+
 ## 🤝 Contributing
 
 Contributions are welcome! Please read our [contributing guidelines](.github/PULL_REQUEST_TEMPLATE.md) before submitting a pull request.
