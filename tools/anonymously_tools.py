@@ -97,24 +97,12 @@ class Proxychain(HackingTool):
         super().__init__(installable=True, runnable=False)
 
     def run(self):
-        """Show proxychains configuration info."""
+        """Show proxychains configuration info.
+
+        Note: proxychains4 config is typically at /etc/proxychains4.conf.
+        Edit that file to add your proxy servers before use.
+        """
         import subprocess
+        # Print the config file location as a helpful reminder
+        print("[*] ProxyChains config file: /etc/proxychains4.conf")
         subprocess.call(["proxychains4", "-h"])
-
-
-class AnonymouslyTools(HackingToolsCollection):
-    """Collection of anonymity and privacy tools."""
-
-    TITLE = "Anonymously Tools"
-    DESCRIPTION = "Tools for anonymous browsing and privacy"
-
-    TOOLS = [
-        Anonsurf(),
-        Multitor(),
-        Anonip(),
-        TorBrowser(),
-        Proxychain(),
-    ]
-
-    def __init__(self):
-        super().__init__()
