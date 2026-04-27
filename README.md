@@ -80,7 +80,7 @@ python3 hackingtool.py
 
 Navigate through the menu using the numbered options displayed on screen.
 
-> **Personal note:** I primarily use this for the Information Gathering and Subdomain Scanner sections while practicing on HackTheBox/TryHackMe labs.
+> **Personal note:** I primarily use this for the Information Gathering and Subdomain Scanner sections while practicing on HackTheBox/TryHackMe labs. Most recently found the Recon Framework useful for OSCP prep.
 
 ## 🤝 Contributing
 
