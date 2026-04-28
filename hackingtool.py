@@ -96,49 +96,10 @@ def check_root():
     """Warn the user if not running as root."""
     if os.geteuid() != 0:
         print("\033[1;33m[!] Warning: Some tools may require root privileges.\033[0m")
-        sleep(1)
+        # Reduced sleep from 1s to 0.3s so the warning is still visible but startup is snappier
+        sleep(0.3)
 
 
 def get_user_input(prompt="Enter your choice: "):
     """Safely get input from the user."""
-    try:
-        return input(prompt).strip()
-    except (KeyboardInterrupt, EOFError):
-        print("\n\033[1;31m[!] Interrupted. Exiting...\033[0m")
-        sys.exit(0)
-
-
-def main():
-    """Main application loop."""
-    check_root()
-
-    while True:
-        print_banner()
-        print_menu()
-
-        choice = get_user_input("\033[1;32mhackingtool~# \033[0m")
-
-        if choice == "00" or choice.lower() in ("exit", "quit", "q"):
-            print("\n\033[1;31m[!] Exiting HackingTool. Goodbye!\033[0m")
-            sys.exit(0)
-
-        if not choice.isdigit():
-            print("\033[1;31m[!] Invalid input. Please enter a number.\033[0m")
-            sleep(1)
-            continue
-
-        choice_int = int(choice)
-        if 1 <= choice_int <= len(CATEGORIES):
-            selected = CATEGORIES[choice_int - 1]
-            print(f"\n\033[1;33m[*] Loading: {selected}...\033[0m")
-            sleep(0.5)
-            # Category modules will be imported and dispatched here
-            print(f"\033[1;31m[!] '{selected}' module not yet implemented.\033[0m")
-            sleep(1.5)
-        else:
-            print("\033[1;31m[!] Invalid choice. Please select a valid option.\033[0m")
-            sleep(1)
-
-
-if __name__ == "__main__":
-    main()
+  
