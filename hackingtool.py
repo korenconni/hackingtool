@@ -96,10 +96,6 @@ def check_root():
     """Warn the user if not running as root."""
     if os.geteuid() != 0:
         print("\033[1;33m[!] Warning: Some tools may require root privileges.\033[0m")
-        # Reduced sleep from 1s to 0.3s so the warning is still visible but startup is snappier
-        sleep(0.3)
-
-
-def get_user_input(prompt="Enter your choice: "):
-    """Safely get input from the user."""
-  
+        # Skip the sleep entirely — I find even 0.3s annoying when iterating quickly.
+        # The warning is still printed above, so nothing is lost.
+        pass
